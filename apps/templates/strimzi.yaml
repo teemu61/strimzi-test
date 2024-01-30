@@ -18,7 +18,7 @@ spec:
       values: |
         namespace: strimzi
         targetRevision: 0.34.0
-        featureGates: "UseStrimziPodSets"
+        featureGates: ""
         watchAnyNamespace: true
       version: v3
   destination:
