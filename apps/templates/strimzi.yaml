@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/teemu61/strimzi-test
+    repoURL: https://strimzi.io/charts/
     targetRevision: HEAD
     path: strimzi
     values:
