@@ -3,3 +3,4 @@ strimzi:
   targetRevision: 0.34.0
   values:
     featureGates: "-UseStrimziPodSets"
+    watchAnyNamespace: true
