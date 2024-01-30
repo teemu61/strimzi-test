@@ -16,14 +16,8 @@ spec:
       releaseName: strimzi
       valueFiles:
         - values.yaml
-      # Values file as block file
 {{ if .Values.strimzi.values }}
       values: |
 {{ toYaml .Values.strimzi.values | indent 8}}
 {{ end }}
-      # Optional Helm version to template with. If omitted it will fallback to look at the 'apiVersion' in Chart.yaml
-      # and decide which Helm binary to use automatically. This field can be either 'v2' or 'v3'.
       version: v3
-  destination:
-    server: https://kubernetes.default.svc
-    namespace: strimzi
