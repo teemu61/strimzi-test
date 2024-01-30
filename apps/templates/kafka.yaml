@@ -12,9 +12,9 @@ spec:
     targetRevision: HEAD
     path: kafka
     helm:
-      releaseName: kafka
-      targetRevision: 0.34.0
       namespace: strimzi
+      targetRevision: 0.34.0
+      releaseName: kafka
       values:
         featureGates: "-UseStrimziPodSets"
       version: v3
