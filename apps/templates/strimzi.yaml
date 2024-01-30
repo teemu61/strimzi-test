@@ -11,6 +11,8 @@ spec:
     repoURL: https://github.com/elisapolystar/strimzi-test/
     targetRevision: HEAD
     path: strimzi
+    values:
+      featureGates: "-UseStrimziPodSets"
     helm:
       releaseName: strimzi
       valueFiles:

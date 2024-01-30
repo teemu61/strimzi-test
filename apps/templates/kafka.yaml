@@ -15,8 +15,6 @@ spec:
       namespace: strimzi
       targetRevision: 0.34.0
       releaseName: kafka
-      values:
-        featureGates: "-UseStrimziPodSets"
       version: v3
   destination:
     server: https://kubernetes.default.svc
