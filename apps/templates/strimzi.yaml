@@ -10,7 +10,6 @@ spec:
   source:
     repoURL: https://strimzi.io/charts/
     targetRevision: HEAD
-    path: strimzi
     helm:
       releaseName: strimzi
       namespace: strimzi
