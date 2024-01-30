@@ -10,11 +10,11 @@ spec:
   source:
     repoURL: https://strimzi.io/charts/
     targetRevision: HEAD
+    chart: "strimzi-kafka-operator"
     helm:
       releaseName: strimzi
       namespace: strimzi
       targetRevision: 0.34.0
-      chart: "strimzi-kafka-operator"
       values:
         featureGates: "-UseStrimziPodSets"
         watchAnyNamespace: true
