@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://github.com/teemu61/strimzi-test
-    targetRevision: master
+    targetRevision: HEAD
     path: kafka
     helm:
       namespace: strimzi
