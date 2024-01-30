@@ -17,7 +17,6 @@ spec:
         - values.yaml
       values: |
         namespace: strimzi
-        targetRevision: 0.37.0
         featureGates: ""
         watchAnyNamespace: true
       version: v3
