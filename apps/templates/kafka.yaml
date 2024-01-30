@@ -13,6 +13,9 @@ spec:
     path: kafka
     helm:
       releaseName: kafka
+      targetRevision: 0.34.0
+      values:
+        featureGates: "-UseStrimziPodSets"
       valueFiles:
         - values.yaml
       version: v3

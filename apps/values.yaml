@@ -1,11 +1,2 @@
-version: 3.4.0
 
-addOns:
-  strimzi:
-    targetRevision: 0.34.0
-    values:
-      featureGates: "-UseStrimziPodSets"
-  argocdNotifications:
-    values:
-      context:
-        environmentName: Development
+
