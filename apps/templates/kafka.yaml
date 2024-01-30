@@ -14,10 +14,9 @@ spec:
     helm:
       releaseName: kafka
       targetRevision: 0.34.0
+      namespace: strimzi
       values:
         featureGates: "-UseStrimziPodSets"
-      valueFiles:
-        - values.yaml
       version: v3
   destination:
     server: https://kubernetes.default.svc
