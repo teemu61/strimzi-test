@@ -17,6 +17,11 @@ spec:
       releaseName: strimzi
       valueFiles:
         - values.yaml
+{{ if .Values.strimzi.values }}
+      values: |
+{{ toYaml .Values.strimzi.values | indent 8}}
+{{ end }}
+
       version: v3
   destination:
     server: https://kubernetes.default.svc
