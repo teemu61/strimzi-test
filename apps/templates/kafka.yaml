@@ -8,7 +8,7 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/elisapolystar/strimzi-test/
+    repoURL: https://github.com/teemu61/strimzi-test
     targetRevision: HEAD
     path: kafka
     helm:
