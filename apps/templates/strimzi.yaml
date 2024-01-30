@@ -9,7 +9,7 @@ spec:
   project: default
   source:
     repoURL: https://strimzi.io/charts/
-    targetRevision: {{ .Values.strimzi.targetRevision }}
+    targetRevision: 0.34.0
     chart: "strimzi-kafka-operator"
     helm:
       parameters: []
