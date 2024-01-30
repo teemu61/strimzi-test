@@ -23,3 +23,7 @@ spec:
           featureGates: "-UseStrimziPodSets"
           watchAnyNamespace: true
       version: v3
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: strimzi
+
