@@ -18,9 +18,8 @@ spec:
       values: |
         namespace: strimzi
         targetRevision: 0.34.0
-        values:
-          featureGates: "-UseStrimziPodSets"
-          watchAnyNamespace: true
+        featureGates: "-UseStrimziPodSets"
+        watchAnyNamespace: true
       version: v3
   destination:
     server: https://kubernetes.default.svc
