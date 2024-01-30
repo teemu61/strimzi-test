@@ -14,6 +14,7 @@ spec:
       releaseName: strimzi
       namespace: strimzi
       targetRevision: 0.34.0
+      chart: "strimzi-kafka-operator"
       values:
         featureGates: "-UseStrimziPodSets"
         watchAnyNamespace: true
