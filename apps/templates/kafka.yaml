@@ -13,7 +13,6 @@ spec:
     path: kafka
     helm:
       namespace: strimzi
-      targetRevision: 0.34.0
       releaseName: kafka
       version: v3
   destination:
