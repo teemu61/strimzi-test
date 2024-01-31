@@ -72,7 +72,7 @@ spec:
       pod:
         securityContext:
           fsGroup: 2000
-    version: 3.6.1
+    version: 3.4.0
 
   zookeeper:
     jvmOptions:
