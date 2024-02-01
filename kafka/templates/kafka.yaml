@@ -89,9 +89,7 @@ spec:
     storage:
       size: 256Mi
       type: persistent-claim
-      # THIS IT WRONG VALUE WHICH SHOULD CAUSE LOOSING OF PV/PVC !!!
       deleteClaim: true
-    template:
       pod:
         securityContext:
           fsGroup: 2000
