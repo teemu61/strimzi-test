@@ -57,7 +57,7 @@ spec:
     storage:
       size: 256Mi
       type: persistent-claim
-      deleteClaim: false
+      # deleteClaim: false
     template:
       externalBootstrapService:
         metadata:
