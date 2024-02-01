@@ -17,7 +17,8 @@ spec:
         - values.yaml
       values: |
         namespace: strimzi
-        featureGates: "-UseStrimziPodSets"
+        fetureGates: ""
+        # featureGates: "-UseStrimziPodSets"
         watchAnyNamespace: true
       version: v3
   destination:
