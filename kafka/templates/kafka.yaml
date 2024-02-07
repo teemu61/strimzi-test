@@ -57,7 +57,8 @@ spec:
     storage:
       size: 256Mi
       type: persistent-claim
-      # deleteClaim: true
+      #used with strimzipodsets
+      deleteClaim: true
     template:
       externalBootstrapService:
         metadata:
@@ -89,7 +90,8 @@ spec:
     storage:
       size: 256Mi
       type: persistent-claim
-      # deleteClaim: true
+      #used with strimzipodsets
+      deleteClaim: true
       pod:
         securityContext:
           fsGroup: 2000
