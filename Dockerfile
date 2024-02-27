@@ -1,26 +1,35 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: kafka
+  name: strimzi
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   source:
-    repoURL: https://github.com/teemu61/strimzi-test
-    targetRevision: HEAD
-    path: kafka
+    repoURL: https://strimzi.io/charts/
+    targetRevision: 0.39.0
+    chart: "strimzi-kafka-operator"
     helm:
-      releaseName: kafka
+      releaseName: strimzi
+      valueFiles:
+        - values.yaml
+      values: |
+        namespace: strimzi
+        fetureGates: ""
+        # featureGates: "-UseStrimziPodSets"
+        watchAnyNamespace: true
       version: v3
   destination:
     server: https://kubernetes.default.svc
     namespace: strimzi
+
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
+      allowEmpty: false
     syncOptions:
       - Validate=false
       - CreateNamespace=true
@@ -32,3 +41,4 @@ spec:
         duration: 5s
         factor: 2
         maxDuration: 3m
+
