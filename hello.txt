@@ -1,1 +1,1 @@
-my new file contents modified.
+Hello text file to be commited
