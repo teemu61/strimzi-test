@@ -1,4 +1,4 @@
-FROM valkama.saunalahti.fi/image/python:3.11-slim
+FROM uusirepo.fi/image/python:3.11-slim
 
 COPY Pipfile Pipfile.lock /app/
 
