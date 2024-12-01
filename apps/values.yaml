@@ -1,0 +1,51 @@
+akhq:
+  configuration:
+    akhq:
+      connections:
+        ssl-dev:
+          properties:
+            bootstrap.servers: vnoc-kafka-bootstrap:9092
+            security.protocol: SSL
+            ssl.key.location: /tmp/user-certs/user.key
+            ssl.certificate.location: /tmp/user-certs/user.crt
+            ssl.ca.location: /tmp/kafka-certs/ca.crt
+            ssl.truststore.location: /tmp/kafka-certs/ca.p12
+            ssl.truststore.password: ${KAFKA_TRUSTSTORE_PASSWORD}
+            ssl.keystore.type: "PKCS12"
+            ssl.keystore.location: /tmp/user-certs/user.p12
+            ssl.keystore.password: ${KAFKA_KEYSTORE_PASSWORD}
+#          schema-registry:
+#            url: http://vnoc-cp-schema-registry:8081
+#            type: "confluent"
+  extraEnv:
+    - name: KAFKA_TRUSTSTORE_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          key: ca.password
+          name: vnoc-cluster-ca-cert
+    - name: KAFKA_KEYSTORE_PASSWORD
+      valueFrom:
+        secretKeyRef:
+          key: user.password
+          name: vnoc-akhq
+  extraVolumes:
+    - name: kafka-certs
+      secret:
+        secretName: vnoc-cluster-ca-cert
+    - name: user-certs
+      secret:
+        secretName: vnoc-akhq
+  extraVolumeMounts:
+    - name: kafka-certs
+      mountPath: /tmp/kafka-certs
+      readOnly: true
+    - name: user-certs
+      mountPath: /tmp/user-certs
+      readOnly: true
+  resources:
+    limits:
+      cpu: 1000m
+      memory: 2048Mi
+    requests:
+      cpu: 100m
+      memory: 512Mi
