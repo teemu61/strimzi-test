@@ -1,0 +1,14 @@
+{{- $namespace := .Release.Namespace }}
+{{- range .Values.kafkaUsers }}
+apiVersion: kafka.strimzi.io/v1beta2
+kind: KafkaUser
+metadata:
+  name: {{ .name }}
+  namespace: {{ $namespace }}
+  labels:
+    strimzi.io/cluster: vnoc
+spec:
+  authentication:
+    type: {{ .authentication }}
+---
+{{- end }}

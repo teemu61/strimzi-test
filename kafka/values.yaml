@@ -1,1 +1,3 @@
-
+kafkaUsers:
+  - name: akhq
+    authentication: tls
